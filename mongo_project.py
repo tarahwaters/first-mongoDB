@@ -53,6 +53,8 @@ def add_record():
         coll.insert(new_doc)
         print("")
         print("Document inserted")
+    except:
+        print("Error accessing the database")
 
 
 def main_loop():
