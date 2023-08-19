@@ -39,6 +39,21 @@ def add_record():
     occupation = input("Enter occupation > ")
     nationality = input("Enter nationality > ")
 
+    new_doc = {
+        "first": first.lower(),
+        "last": last.lower(),
+        "dob": dob,
+        "gender": gender,
+        "hair_color": hair_color,
+        "occupation": occupation,
+        "nationality": nationality
+    }
+
+    try:
+        coll.insert(new_doc)
+        print("")
+        print("Document inserted")
+
 
 def main_loop():
     while True:
