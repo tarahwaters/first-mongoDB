@@ -46,3 +46,8 @@ def main_loop():
         else:
             print("Invalid option")
         print("")
+
+
+conn = mongo_connect(MONGO_URI)
+coll = conn[DATABASE][COLLECTION]
+main_loop()
