@@ -12,7 +12,6 @@ COLLECTION = "celebrities"
 def mongo_connect(url):
     try:
         conn = pymongo.MongoClient(url)
-        print("Mongo is connected")
         return conn
     except pymongo.errors.ConnectionFailure as e:
         print("Could not connect to MongoDB: %s") % e
