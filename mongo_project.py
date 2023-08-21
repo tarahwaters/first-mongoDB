@@ -91,10 +91,10 @@ def edit_record():
         print("")
         for k,v in doc.items():
             if k != "_id":
-                update_doc[k] = input(k.captialize() + " [" + V + "] > ")
+                update_doc[k] = input(k.capitalize() + " [" + v + "] > ")
 
                 if update_doc[k] == "":
-                    update_do[k] = v
+                    update_doc[k] = v
         
         try:
             coll.update_one(doc, {"$set": update_doc})
