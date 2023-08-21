@@ -96,8 +96,13 @@ def edit_record():
                 if update_doc[k] == "":
                     update_do[k] = v
         
+        try:
+            coll.update_one(doc, {"$set": update_doc})
+            print("")
+            print("Document updated")
+        except:
+            print("Error accessing the database")  
         
-
 
 def main_loop():
     while True:
