@@ -101,7 +101,29 @@ def edit_record():
             print("")
             print("Document updated")
         except:
-            print("Error accessing the database")  
+            print("Error accessing the database")
+
+
+def delete_record():
+    doc = get_record()
+    if doc:
+        print("")
+        for k,v in doc.items():
+            if k != "_id":
+                print(k.capitalize() + ": " + v.capitalize())
+        
+        print("")
+        confirmation = input("Is this the document you want to delete?\nY or N > ")
+        print("")
+
+        if confirmation.lower() == "y":
+            try:
+                coll.delete_one(doc)
+                print("Document deleted!")
+            except:
+                print("Error accessing the database")
+        else:
+            print("Document not deleted")
         
 
 def main_loop():
