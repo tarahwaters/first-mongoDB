@@ -93,6 +93,11 @@ def edit_record():
             if k != "_id":
                 update_doc[k] = input(k.captialize() + " [" + V + "] > ")
 
+                if update_doc[k] == "":
+                    update_do[k] = v
+        
+        
+
 
 def main_loop():
     while True:
